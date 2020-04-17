@@ -17,6 +17,7 @@ class Scraper
       student_info[:profile_url] = './fixtures/student-site/' + profile_path
       students_array << student_info
     end
+    student_array 
   end
 
   def self.scrape_profile_page(profile_url)
