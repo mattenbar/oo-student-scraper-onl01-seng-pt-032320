@@ -7,16 +7,16 @@ require_relative './student.rb'
 class Scraper
 
   def self.scrape_index_page(index_url)
+    students_array = []
     doc = Nokogiri::HTML(open(index_url))
-    hash = {}
-    doc.css(".roster-cards-container").each do |student_card|
-      student_card.css(".student-card").each do |student|
-        "#{student.attribute('href')}"
-      end
+    doc.student_card.css(".student-card").each do |student|
+      student_info = {}
+      student_info[:name] = student.css("h4.student-name").text
+      student_info[:location] = student.css("p.student-location").text
+      profile_path = student.css("a").attribute("href").value
+      student_info[:profile_url] = './fixtures/student-site/' + profile_path
+      students_array << student_info
     end
-
-
-    #binding.pry
   end
 
   def self.scrape_profile_page(profile_url)
