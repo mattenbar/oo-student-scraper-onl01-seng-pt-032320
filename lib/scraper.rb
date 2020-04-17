@@ -21,7 +21,7 @@ class Scraper
     student_profile = {}
     doc = Nokogiri::HTML(open(profile_url))
     student_profile[:bio] = doc.css(".description-holder p").text
-    student_profile[:blog]
+    student_profile[:blog] = 
     student_profile[:github]
     student_profile[:lindedin]
     student_profile[:profile_quote]
