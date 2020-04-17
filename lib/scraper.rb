@@ -16,7 +16,6 @@ class Scraper
       student_info[:profile_url] = student.css("a").attribute("href").text
       students_array << student_info
     end
-    binding.pry
     students_array
   end
 
