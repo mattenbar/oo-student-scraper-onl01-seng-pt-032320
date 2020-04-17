@@ -8,6 +8,7 @@ class Scraper
 
   def self.scrape_index_page(index_url)
     doc = Nokogiri::HTML(open(index_url))
+    hash = {}
     doc.css(".roster-cards-container").each do |student_card|
       student_card.css(".student-card").each do |student|
         "#{student.attribute('href')}"
