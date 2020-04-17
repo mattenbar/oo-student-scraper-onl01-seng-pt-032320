@@ -26,6 +26,8 @@ class Scraper
     student_profile[:lindedin]
     student_profile[:profile_quote]
     student_profile[:twitter]
+
+    student_profile
   end
 
 end
