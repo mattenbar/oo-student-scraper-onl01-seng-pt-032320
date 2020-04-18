@@ -26,7 +26,7 @@ class Scraper
     doc.css(".social-icon-container a").each do |social_icon|
       if social_icon.attribute("href").text.include?("github")
         student_profile[:github] =social_icon.attribute("href").text
-      elsif social_icon.attribute("href").text.include?("lindedin")
+      elsif social_icon.attribute("href").text.include?("linkedin")
         student_profile[:linkedin] = social_icon.attribute("href").text
       elsif social_icon.attribute("href").text.include?("twitter")
         student_profile[:twitter] = social_icon.attribute("href").text
