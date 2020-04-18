@@ -24,11 +24,11 @@ class Scraper
     student_profile[:profile_quote] = doc.css("div.main-wrapper.profile .vitals-text-container .profile-quote").text
 
     doc.css(".social-icon-container").each do |social_icon|
-      if social_icon.attribute("href").value.include?("github")
+      if social_icon.attribute("href").text.include?("github")
         student_profile[:github] =social_icon.attribute("href").text
-      elsif social_icon.attribute("href").value.include?("lindedin")
+      elsif social_icon.attribute("href").text.include?("lindedin")
         student_profile[:lindedin] = social_icon.attribute("href").text
-      elsif social_icon.attribute("href").value.include?("twitter")
+      elsif social_icon.attribute("href").text.include?("twitter")
         student_profile[:twitter] = social_icon.attribute("href").text
       else
         student_profile[:blog] = social_icon.attribute("href").text
