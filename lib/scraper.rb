@@ -27,7 +27,7 @@ class Scraper
       if social_icon.attribute("href").text.include?("github")
         student_profile[:github] =social_icon.attribute("href").text
       elsif social_icon.attribute("href").text.include?("lindedin")
-        student_profile[:lindedin] = social_icon.attribute("href").text
+        student_profile[:linkedin] = social_icon.attribute("href").text
       elsif social_icon.attribute("href").text.include?("twitter")
         student_profile[:twitter] = social_icon.attribute("href").text
       else
