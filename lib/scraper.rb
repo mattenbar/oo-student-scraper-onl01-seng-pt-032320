@@ -32,6 +32,7 @@ class Scraper
         student_profile[:twitter] = social_icon.attribute("href").value
       else
         student_profile[:blog] = social_icon.attribute("href").value
+      end
     end
     student_profile
   end
