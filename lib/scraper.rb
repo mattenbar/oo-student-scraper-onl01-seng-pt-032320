@@ -23,7 +23,7 @@ class Scraper
     student_profile[:bio] = doc.css(".description-holder p").text
     student_profile[:profile_quote] = doc.css("div.main-wrapper.profile .vitals-text-container .profile-quote").text
 
-    doc.css(".social-icon-container").each do |social_icon|
+    doc.css(".social-icon-container a").each do |social_icon|
       if social_icon.attribute("href").text.include?("github")
         student_profile[:github] =social_icon.attribute("href").text
       elsif social_icon.attribute("href").text.include?("lindedin")
